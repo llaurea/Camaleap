@@ -1,0 +1,45 @@
+[gd_scene load_steps=3 format=3 uid="uid://digqjh7j8wolg"]
+
+[ext_resource type="Script" uid="uid://b8juhuecav1v3" path="res://scripts/menu.gd" id="1_vjb58"]
+[ext_resource type="Texture2D" uid="uid://difwc4tbtcvnl" path="res://artwork/icon.svg" id="2_con2f"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_vjb58")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(320, 240)
+scale = Vector2(5, 3.75)
+texture = ExtResource("2_con2f")
+
+[node name="start" type="Button" parent="."]
+layout_mode = 0
+offset_left = 66.0
+offset_top = 268.0
+offset_right = 276.0
+offset_bottom = 321.0
+text = "start"
+
+[node name="quit" type="Button" parent="."]
+offset_left = 65.0
+offset_top = 329.0
+offset_right = 276.0
+offset_bottom = 384.0
+text = "quit"
+
+[node name="mute" type="Button" parent="."]
+layout_mode = 0
+offset_left = 578.0
+offset_top = 425.0
+offset_right = 631.0
+offset_bottom = 474.0
+text = "shhh"
+
+[connection signal="pressed" from="start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]
+[connection signal="pressed" from="mute" to="." method="_on_mute_pressed"]
