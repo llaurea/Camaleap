@@ -51,4 +51,12 @@ func _physics_process(delta): #Aplica gravidade
 				on_wall = false
 
 	#Para flipar o sprite depois (se realmentar for fazer assim) só tirar a # que está embaixo
-	#$Sprite2D.flip_h = direction < 0
+	$Sprite2D.flip_h = direction < 0
+
+func _on_morte_body_entered(body: Node2D) -> void:
+	if body == self:
+		die()
+
+func die():
+	# reseta
+	get_tree().reload_current_scene()

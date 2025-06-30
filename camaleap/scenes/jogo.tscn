@@ -1,48 +1,226 @@
-[gd_scene load_steps=6 format=3 uid="uid://b8y0laji325nx"]
+[gd_scene load_steps=21 format=3 uid="uid://b8y0laji325nx"]
 
+[ext_resource type="Texture2D" uid="uid://dhidqmvsem1at" path="res://artwork/chao.jpg" id="1_4sjka"]
 [ext_resource type="Texture2D" uid="uid://difwc4tbtcvnl" path="res://artwork/icon.svg" id="1_7bb4d"]
+[ext_resource type="Texture2D" uid="uid://c0bwbwt17bxrv" path="res://artwork/laterais.png" id="1_k05ng"]
 [ext_resource type="Script" uid="uid://dm1anoy8uljir" path="res://scripts/prisma.gd" id="1_sq8yp"]
+[ext_resource type="Texture2D" uid="uid://r0bgrcurlri" path="res://artwork/barreira.jpg" id="2_8i8hp"]
+[ext_resource type="Script" uid="uid://lbueqw2l2vxs" path="res://scenes/camera_2d.gd" id="3_1b3iq"]
+[ext_resource type="Texture2D" uid="uid://bm4w7rwdcc6tn" path="res://artwork/paredelava d.png" id="5_0c0ry"]
+[ext_resource type="Texture2D" uid="uid://bsrqqnw40p41i" path="res://artwork/paredelava E.png" id="7_ogo8m"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_4sjka"]
+size = Vector2(79.625, 478)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8i8hp"]
+size = Vector2(23, 481)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_sq8yp"]
-size = Vector2(86.5, 1585.5)
+size = Vector2(79.125, 480.5)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_1b3iq"]
 size = Vector2(641, 55)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ogo8m"]
+size = Vector2(481, 32)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_gsaar"]
+size = Vector2(481, 29)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_drirx"]
+size = Vector2(144, 161)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_qbbxf"]
+size = Vector2(480.75, 31)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t8n7k"]
+size = Vector2(96.5, 113)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_y6f35"]
+size = Vector2(97, 112)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_avosf"]
+size = Vector2(482, 31)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k05ng"]
 size = Vector2(82, 82)
 
 [node name="Node2D" type="Node2D"]
 
+[node name="Chao" type="Sprite2D" parent="."]
+position = Vector2(336, 226)
+texture = ExtResource("1_4sjka")
+
+[node name="Chao2" type="Sprite2D" parent="."]
+position = Vector2(319.5, -67.5)
+scale = Vector2(0.751563, 0.90625)
+texture = ExtResource("1_4sjka")
+
+[node name="Chao3" type="Sprite2D" parent="."]
+position = Vector2(400, -463)
+texture = ExtResource("1_4sjka")
+
+[node name="Chao4" type="Sprite2D" parent="."]
+position = Vector2(392, -976)
+texture = ExtResource("1_4sjka")
+
+[node name="Barreira" type="Sprite2D" parent="."]
+position = Vector2(488, -134)
+scale = Vector2(1.5, 1.42857)
+texture = ExtResource("2_8i8hp")
+
+[node name="Barreira2" type="Sprite2D" parent="."]
+position = Vector2(329, -647)
+texture = ExtResource("2_8i8hp")
+
+[node name="Barreira3" type="Sprite2D" parent="."]
+position = Vector2(327, -807)
+texture = ExtResource("2_8i8hp")
+
 [node name="fundo" type="Sprite2D" parent="."]
 
-[node name="StaticBody2D3" type="StaticBody2D" parent="fundo"]
+[node name="Laterais2" type="Sprite2D" parent="fundo"]
+position = Vector2(320, -1199)
+texture = ExtResource("1_k05ng")
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="fundo/StaticBody2D3"]
-position = Vector2(598, -313)
+[node name="parede d4" type="StaticBody2D" parent="fundo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fundo/parede d4"]
+position = Vector2(601, -1200)
+shape = SubResource("RectangleShape2D_4sjka")
+
+[node name="parede e4" type="StaticBody2D" parent="fundo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fundo/parede e4"]
+position = Vector2(40, -1200)
+shape = SubResource("RectangleShape2D_4sjka")
+
+[node name="ParedelavaE" type="Sprite2D" parent="fundo"]
+position = Vector2(320, -719)
+texture = ExtResource("7_ogo8m")
+
+[node name="parede d3" type="StaticBody2D" parent="fundo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fundo/parede d3"]
+position = Vector2(601, -718)
+shape = SubResource("RectangleShape2D_4sjka")
+
+[node name="ParedelavaD" type="Sprite2D" parent="fundo"]
+position = Vector2(320, -239)
+texture = ExtResource("5_0c0ry")
+
+[node name="Parade e2" type="StaticBody2D" parent="fundo"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fundo/Parade e2"]
+position = Vector2(39, -240)
+shape = SubResource("RectangleShape2D_4sjka")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="fundo/Parade e2"]
+position = Vector2(573, -239.5)
+shape = SubResource("RectangleShape2D_8i8hp")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="fundo/Parade e2"]
+position = Vector2(64.5, -720.5)
+shape = SubResource("RectangleShape2D_8i8hp")
+
+[node name="Laterais" type="Sprite2D" parent="fundo"]
+position = Vector2(320, 241)
+texture = ExtResource("1_k05ng")
+
+[node name="Parede D1" type="StaticBody2D" parent="fundo"]
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="fundo/Parede D1"]
+position = Vector2(601.125, 240)
 shape = SubResource("RectangleShape2D_sq8yp")
 
-[node name="StaticBody2D2" type="StaticBody2D" parent="fundo"]
+[node name="parede E1" type="StaticBody2D" parent="fundo"]
 
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="fundo/StaticBody2D2"]
-position = Vector2(43, -313.25)
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="fundo/parede E1"]
+position = Vector2(39.4375, 240)
 shape = SubResource("RectangleShape2D_sq8yp")
 
-[node name="StaticBody2D" type="StaticBody2D" parent="fundo"]
+[node name="chao" type="StaticBody2D" parent="fundo"]
+position = Vector2(319, 527)
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="fundo/StaticBody2D"]
-position = Vector2(320.5, 507)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="fundo/chao"]
+position = Vector2(2, -19)
 shape = SubResource("RectangleShape2D_1b3iq")
 
+[node name="morte" type="Area2D" parent="."]
+disable_mode = 1
+
+[node name="LAVA" type="CollisionShape2D" parent="morte"]
+position = Vector2(601, -240)
+shape = SubResource("RectangleShape2D_4sjka")
+debug_color = Color(0.988235, 0, 0.298039, 0.419608)
+
+[node name="LAVA2" type="CollisionShape2D" parent="morte"]
+position = Vector2(39, -720)
+shape = SubResource("RectangleShape2D_4sjka")
+debug_color = Color(0.988807, 0, 0.297786, 0.42)
+
+[node name="CHAO1" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CHAO1"]
+position = Vector2(321, 226)
+shape = SubResource("RectangleShape2D_ogo8m")
+one_way_collision = true
+
+[node name="CHAO2" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CHAO2"]
+position = Vector2(319.5, -67.5)
+shape = SubResource("RectangleShape2D_gsaar")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CHAO2"]
+position = Vector2(488, -133.5)
+shape = SubResource("RectangleShape2D_drirx")
+
+[node name="CHAO3" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CHAO3"]
+position = Vector2(319.375, -464)
+shape = SubResource("RectangleShape2D_qbbxf")
+one_way_collision = true
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="CHAO3"]
+position = Vector2(328, -648)
+shape = SubResource("RectangleShape2D_t8n7k")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="CHAO3"]
+position = Vector2(327, -807)
+shape = SubResource("RectangleShape2D_y6f35")
+
+[node name="CHAO4" type="StaticBody2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="CHAO4"]
+position = Vector2(320, -976.5)
+shape = SubResource("RectangleShape2D_avosf")
+one_way_collision = true
+
 [node name="prisma" type="CharacterBody2D" parent="."]
+position = Vector2(320, 360)
 script = ExtResource("1_sq8yp")
 
 [node name="Sprite2D" type="Sprite2D" parent="prisma"]
-position = Vector2(311, 438)
+position = Vector2(0, 80)
 scale = Vector2(0.648438, 0.648438)
 texture = ExtResource("1_7bb4d")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="prisma"]
-position = Vector2(311, 438)
+position = Vector2(0, 80)
 shape = SubResource("RectangleShape2D_k05ng")
 debug_color = Color(0.739017, 0.320672, 0.853307, 0.42)
+
+[node name="Camera2D" type="Camera2D" parent="prisma" node_paths=PackedStringArray("target")]
+position = Vector2(0, -8)
+drag_horizontal_enabled = true
+drag_left_margin = 1.0
+drag_right_margin = 1.0
+drag_bottom_margin = 1.0
+script = ExtResource("3_1b3iq")
+target = NodePath("..")
+smoothing_speed = 3.0
+
+[connection signal="body_entered" from="morte" to="prisma" method="_on_morte_body_entered"]
