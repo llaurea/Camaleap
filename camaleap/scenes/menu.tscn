@@ -1,10 +1,13 @@
-[gd_scene load_steps=6 format=3 uid="uid://digqjh7j8wolg"]
+[gd_scene load_steps=9 format=3 uid="uid://digqjh7j8wolg"]
 
 [ext_resource type="Script" uid="uid://b8juhuecav1v3" path="res://scripts/menu.gd" id="1_vjb58"]
 [ext_resource type="Texture2D" uid="uid://ibgc0docl3ms" path="res://artwork/menu camaleap.jpg" id="2_con2f"]
+[ext_resource type="Texture2D" uid="uid://ct8ekk45mddpb" path="res://artwork/BOTRAO.png" id="3_g3eks"]
 [ext_resource type="Texture2D" uid="uid://blirxntchornl" path="res://artwork/botao mute.jpg" id="3_mhnvy"]
 [ext_resource type="Texture2D" uid="uid://cxasn6gm357yl" path="res://artwork/botao unmute.jpg" id="4_mhnvy"]
 [ext_resource type="AudioStream" uid="uid://c7bvl0u5a7eoe" path="res://music/menu.mp3" id="5_4ytvr"]
+[ext_resource type="Texture2D" uid="uid://qxeml56cf5no" path="res://artwork/play.png" id="7_13sgg"]
+[ext_resource type="Texture2D" uid="uid://cno5rcvlqgeij" path="res://artwork/quit.png" id="8_i6lef"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
@@ -22,21 +25,23 @@ texture = ExtResource("2_con2f")
 
 [node name="start" type="Button" parent="."]
 layout_mode = 0
-offset_left = 87.0
-offset_top = 542.0
-offset_right = 297.0
-offset_bottom = 595.0
+offset_left = 85.0
+offset_top = 498.0
+offset_right = 317.0
+offset_bottom = 570.0
 scale = Vector2(2.00053, 2.0274)
-text = "start"
+icon = ExtResource("3_g3eks")
+flat = true
 
 [node name="quit" type="Button" parent="."]
 layout_mode = 0
-offset_left = 84.0
-offset_top = 677.0
-offset_right = 295.0
-offset_bottom = 732.0
+offset_left = 85.0
+offset_top = 648.0
+offset_right = 317.0
+offset_bottom = 720.0
 scale = Vector2(2.00053, 2.0274)
-text = "quit"
+icon = ExtResource("3_g3eks")
+flat = true
 
 [node name="mute2" type="TextureButton" parent="."]
 layout_mode = 0
@@ -53,6 +58,16 @@ stream = ExtResource("5_4ytvr")
 volume_db = 5.527
 autoplay = true
 max_distance = 4096.0
+
+[node name="Play" type="Sprite2D" parent="."]
+position = Vector2(320, 568)
+scale = Vector2(2.54444, 2.09375)
+texture = ExtResource("7_13sgg")
+
+[node name="Quit" type="Sprite2D" parent="."]
+position = Vector2(320, 720)
+scale = Vector2(2.45833, 2.375)
+texture = ExtResource("8_i6lef")
 
 [connection signal="pressed" from="start" to="." method="_on_start_pressed"]
 [connection signal="pressed" from="quit" to="." method="_on_quit_pressed"]

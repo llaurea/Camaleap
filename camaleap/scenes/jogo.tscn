@@ -67,19 +67,19 @@ size = Vector2(70.4038, 479.813)
 size = Vector2(320.003, 36.2649)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_drirx"]
-size = Vector2(53.4184, 87.8291)
+size = Vector2(51.3573, 81.979)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_t8n7k"]
-size = Vector2(65.0192, 87.7373)
+size = Vector2(60.9527, 82.8306)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_y6f35"]
-size = Vector2(66.1193, 88.1597)
+size = Vector2(63.1237, 83.827)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_avosf"]
-size = Vector2(66.1588, 88.8224)
+size = Vector2(61.8546, 81.7019)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_wa8a0"]
-size = Vector2(65.9886, 87.6196)
+size = Vector2(65.9886, 82.3859)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k3sjr"]
 size = Vector2(319.739, 20)
@@ -104,7 +104,6 @@ texture = ExtResource("1_ogo8m")
 
 [node name="Fundo" type="Sprite2D" parent="Fundo4"]
 position = Vector2(-4.6189, -3041.33)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo2" type="Sprite2D" parent="Fundo4"]
@@ -114,57 +113,46 @@ texture = ExtResource("1_ogo8m")
 
 [node name="Fundo3" type="Sprite2D" parent="Fundo4"]
 position = Vector2(3.82428, -2018.3)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo5" type="Sprite2D" parent="Fundo4"]
 position = Vector2(-19.2986, -9131.65)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo6" type="Sprite2D" parent="Fundo4"]
 position = Vector2(-1.31848, -4053.01)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo7" type="Sprite2D" parent="Fundo4"]
 position = Vector2(-4.90063, -7095.19)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo8" type="Sprite2D" parent="Fundo4"]
 position = Vector2(17.2979, -8115.18)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo9" type="Sprite2D" parent="Fundo4"]
 position = Vector2(-31.3081, -6084.89)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo10" type="Sprite2D" parent="Fundo4"]
 position = Vector2(-15.343, -5066.21)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo11" type="Sprite2D" parent="Fundo4"]
 position = Vector2(-16.4684, -10147.7)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo12" type="Sprite2D" parent="Fundo4"]
 position = Vector2(16.7169, -12153.1)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo13" type="Sprite2D" parent="Fundo4"]
 position = Vector2(-11.4111, -11156.7)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo14" type="Sprite2D" parent="Fundo4"]
 position = Vector2(-76.2987, -13142.8)
-scale = Vector2(1, 1)
 texture = ExtResource("1_ogo8m")
 
 [node name="Fundo15" type="Sprite2D" parent="Fundo4"]
@@ -173,7 +161,7 @@ scale = Vector2(1, 0.823298)
 texture = ExtResource("1_ogo8m")
 
 [node name="prisma" type="CharacterBody2D" parent="."]
-position = Vector2(339.971, -6263.04)
+position = Vector2(339.971, 402.501)
 script = ExtResource("1_sq8yp")
 
 [node name="Sprite2D" type="Sprite2D" parent="prisma"]
@@ -222,23 +210,23 @@ position = Vector2(217.896, -5396.16)
 shape = SubResource("RectangleShape2D_4sjka")
 
 [node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(161.735, -7002.77)
+position = Vector2(160.704, -7002.33)
 shape = SubResource("RectangleShape2D_drirx")
 
 [node name="CollisionShape2D7" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(158.229, -6650.98)
+position = Vector2(156.196, -6650.83)
 shape = SubResource("RectangleShape2D_t8n7k")
 
 [node name="CollisionShape2D8" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(488.506, -6859.06)
+position = Vector2(490.004, -6859.07)
 shape = SubResource("RectangleShape2D_y6f35")
 
 [node name="CollisionShape2D9" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(157.901, -6346.92)
+position = Vector2(155.749, -6347.14)
 shape = SubResource("RectangleShape2D_avosf")
 
 [node name="CollisionShape2D10" type="CollisionShape2D" parent="Area2D"]
-position = Vector2(491.029, -6474.7)
+position = Vector2(491.029, -6475.17)
 shape = SubResource("RectangleShape2D_wa8a0")
 
 [node name="CollisionShape2D11" type="CollisionShape2D" parent="Area2D"]

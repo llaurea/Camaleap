@@ -1,45 +1,93 @@
-[gd_scene load_steps=3 format=3 uid="uid://po0fwc34ayxk"]
+[gd_scene load_steps=11 format=3 uid="uid://po0fwc34ayxk"]
 
 [ext_resource type="Script" uid="uid://1fn18ra3rdtf" path="res://scripts/ganhou.gd" id="1_rajlt"]
+[ext_resource type="Texture2D" uid="uid://ct8ekk45mddpb" path="res://artwork/BOTRAO.png" id="2_av3qt"]
+[ext_resource type="Texture2D" uid="uid://dd76q8jqgoui3" path="res://artwork/fundo.png" id="2_bx5tq"]
 [ext_resource type="AudioStream" uid="uid://c7bvl0u5a7eoe" path="res://music/menu.mp3" id="2_ki3jy"]
+[ext_resource type="Texture2D" uid="uid://dlynj1v4abkg2" path="res://artwork/prisma.png" id="4_bx5tq"]
+[ext_resource type="Texture2D" uid="uid://c7188nrafnk3h" path="res://artwork/menu.png" id="6_ugauw"]
+[ext_resource type="Texture2D" uid="uid://cno5rcvlqgeij" path="res://artwork/quit.png" id="7_kviyf"]
+[ext_resource type="Texture2D" uid="uid://bgpwh7oysuvaf" path="res://artwork/play again.png" id="8_mcfhi"]
+[ext_resource type="Texture2D" uid="uid://buijtvttr6ckh" path="res://artwork/ganhou.png" id="9_mcfhi"]
+[ext_resource type="Texture2D" uid="uid://pwnxtrlvcg2e" path="res://artwork/cc.png" id="10_0pvhm"]
 
 [node name="Control" type="Control"]
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
 anchor_bottom = 1.0
+offset_left = 358.408
+offset_top = 66.0225
+offset_right = 358.408
+offset_bottom = 66.0225
 grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_rajlt")
 
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(282.709, 417.139)
+scale = Vector2(1.2475, 0.948364)
+texture = ExtResource("2_bx5tq")
+
+[node name="Prisma" type="Sprite2D" parent="."]
+position = Vector2(721.268, 540.344)
+scale = Vector2(2.78544, 3.05637)
+texture = ExtResource("4_bx5tq")
+
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
-offset_left = 167.493
-offset_top = 263.05
-offset_right = 446.493
-offset_bottom = 362.05
-text = "play again"
+offset_left = -269.926
+offset_top = 333.977
+offset_right = -37.9263
+offset_bottom = 405.977
+icon = ExtResource("2_av3qt")
+flat = true
 
 [node name="Button2" type="Button" parent="."]
 layout_mode = 0
-offset_left = 170.579
-offset_top = 388.19
-offset_right = 427.579
-offset_bottom = 506.19
-text = "menu"
+offset_left = -269.264
+offset_top = 420.091
+offset_right = -37.2641
+offset_bottom = 492.091
+icon = ExtResource("2_av3qt")
+flat = true
 
 [node name="Button3" type="Button" parent="."]
 layout_mode = 0
-offset_left = 121.325
-offset_top = 563.679
-offset_right = 548.325
-offset_bottom = 654.679
-text = "quit"
+offset_left = -270.408
+offset_top = 508.911
+offset_right = -38.4082
+offset_bottom = 580.911
+icon = ExtResource("2_av3qt")
+flat = true
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("2_ki3jy")
 volume_db = 1.507
 autoplay = true
+
+[node name="Menu" type="Sprite2D" parent="."]
+position = Vector2(-150.408, 457.977)
+texture = ExtResource("6_ugauw")
+
+[node name="Quit" type="Sprite2D" parent="."]
+position = Vector2(-150.408, 545.977)
+texture = ExtResource("7_kviyf")
+
+[node name="PlayAgain" type="Sprite2D" parent="."]
+position = Vector2(-153.908, 369.977)
+scale = Vector2(0.671053, 0.75)
+texture = ExtResource("8_mcfhi")
+
+[node name="Ganhou" type="Sprite2D" parent="."]
+position = Vector2(-78.4082, 93.8525)
+scale = Vector2(0.783784, 0.839474)
+texture = ExtResource("9_mcfhi")
+
+[node name="Cc" type="Sprite2D" parent="."]
+position = Vector2(-270.408, 829.977)
+scale = Vector2(0.25, 0.26)
+texture = ExtResource("10_0pvhm")
 
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
