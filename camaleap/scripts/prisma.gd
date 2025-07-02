@@ -8,8 +8,6 @@ var direction: int = 1
 var jumps_left: int = 2
 var on_wall: bool = false
 
-func _ready():
-	$AnimatedSprite2D.play()
 
 func _physics_process(delta):
 	velocity.y += gravity * delta
@@ -66,3 +64,4 @@ func die():
 func _on_area_2d_2_body_entered(body: Node2D) -> void:
 	if body == self:
 		get_tree().change_scene_to_file("res://scenes/GANHOU.tscn")
+		
