@@ -41,6 +41,11 @@ region = Rect2(2160, 0, 360, 385)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_iaqm3"]
 animations = [{
+"frames": [],
+"loop": true,
+"name": &"jump",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": SubResource("AtlasTexture_drirx")
@@ -218,22 +223,22 @@ scale = Vector2(1, 0.823298)
 texture = ExtResource("1_ogo8m")
 
 [node name="prisma" type="CharacterBody2D" parent="."]
-position = Vector2(333.71, -3479.06)
+position = Vector2(306.839, 392.089)
 script = ExtResource("1_sq8yp")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="prisma"]
 position = Vector2(0.364614, 77.7557)
 scale = Vector2(0.238309, 0.228569)
 sprite_frames = SubResource("SpriteFrames_iaqm3")
-animation = &"run"
+animation = &"jump"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="prisma"]
-position = Vector2(0, 80)
+position = Vector2(6.21971, 84.848)
 shape = SubResource("RectangleShape2D_k05ng")
 debug_color = Color(0.739017, 0.320672, 0.853307, 0.42)
 
 [node name="Camera2D" type="Camera2D" parent="prisma" node_paths=PackedStringArray("target")]
-position = Vector2(0, -8)
+position = Vector2(0.203254, -8.09548)
 drag_horizontal_enabled = true
 drag_left_margin = 1.0
 drag_right_margin = 1.0
