@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bm4w7rwdcc6tn"
-path="res://.godot/imported/paredelava d.png-8b4b47e30b3fe7d41598f61f7634af61.ctex"
+uid="uid://d3y5fd7n4gx0a"
+path="res://.godot/imported/celianna_TileA1.png-4d9158f4e593dbc774c8bdda780adb6f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artwork/paredelava d.png"
-dest_files=["res://.godot/imported/paredelava d.png-8b4b47e30b3fe7d41598f61f7634af61.ctex"]
+source_file="res://artwork/celianna_TileA1.png"
+dest_files=["res://.godot/imported/celianna_TileA1.png-4d9158f4e593dbc774c8bdda780adb6f.ctex"]
 
 [params]
 

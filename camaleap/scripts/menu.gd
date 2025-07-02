@@ -9,5 +9,5 @@ func _on_quit_pressed() -> void:
 	get_tree().quit()
 
 #Quando apertar mute é pra parar a música de fundo (não temos música então nn mexi nele)
-func _on_mute_pressed() -> void:
+func _on_mute_2_pressed() -> void:
 	print ("calaboca")

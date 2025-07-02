@@ -1,9 +1,9 @@
 extends CharacterBody2D
 
 #Configurações da movimentação
-@export var move_speed: float = 250.0 #Horizontal
-@export var jump_force: float = 450.0 #Pulo
-@export var gravity: float = 1000.0 #Gravidade
+@export var move_speed: float = 550.0 #Horizontal
+@export var jump_force: float = 600.0 #Pulo
+@export var gravity: float = 1100.0 #Gravidade
 
 #Estados que começa
 var direction: int = 1 #Começa para a direita
@@ -16,7 +16,7 @@ func _physics_process(delta): #Aplica gravidade
 	#Se estiver encostado em uma parede e fora do chão, o personagem desliza para baixo ao invés de só trocar o lado
 	if on_wall and not is_on_floor():
 		velocity.x = 0
-		velocity.y = min(velocity.y, 200)  #Escorrega para baixo
+		velocity.y = min(velocity.y, 300)  #Escorrega para baixo
 	else:
 		velocity.x = direction * move_speed
 
@@ -31,14 +31,16 @@ func _physics_process(delta): #Aplica gravidade
 	on_wall = false
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
-		if collision.get_normal().x != 0:
+		var normal_x = collision.get_normal().x
+		if abs(normal_x) > 0.1:
 			if is_on_floor():
 				#No chão encostando em uma parede → muda a direção
+				direction = -sign(normal_x)
 				direction *= -1
 			else:
-				#No ar encostando na parede → desliza pela própria parede
+				# #No ar encostando na parede → desliza pela própria parede
 				on_wall = true
-			jumps_left = 2  #Os pulos resetam
+			jumps_left = 2 #Os pulos resetam
 			break
 
 	#Para pular
@@ -53,10 +55,12 @@ func _physics_process(delta): #Aplica gravidade
 	#Para flipar o sprite depois (se realmentar for fazer assim) só tirar a # que está embaixo
 	$Sprite2D.flip_h = direction < 0
 
-func _on_morte_body_entered(body: Node2D) -> void:
+func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == self:
 		die()
 
 func die():
-	# reseta
+	print("Player died!")
+	# You can reset the scene, play animation, etc.
 	get_tree().reload_current_scene()
+	

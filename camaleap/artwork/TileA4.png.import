@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsrqqnw40p41i"
-path="res://.godot/imported/paredelava E.png-40ef9d6bc3d14f5289c4ec92052e685a.ctex"
+uid="uid://wuwa833dl074"
+path="res://.godot/imported/TileA4.png-a04fa46414f721a849bd6b783292a662.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artwork/paredelava E.png"
-dest_files=["res://.godot/imported/paredelava E.png-40ef9d6bc3d14f5289c4ec92052e685a.ctex"]
+source_file="res://artwork/TileA4.png"
+dest_files=["res://.godot/imported/TileA4.png-a04fa46414f721a849bd6b783292a662.ctex"]
 
 [params]
 

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://dhidqmvsem1at"
-path="res://.godot/imported/chao.jpg-d1970ce6ca2a41199af17142b50a1dae.ctex"
+uid="uid://blirxntchornl"
+path="res://.godot/imported/botao mute.jpg-461cde88f22cb6ebfc046f7e95c4cb9f.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artwork/chao.jpg"
-dest_files=["res://.godot/imported/chao.jpg-d1970ce6ca2a41199af17142b50a1dae.ctex"]
+source_file="res://artwork/botao mute.jpg"
+dest_files=["res://.godot/imported/botao mute.jpg-461cde88f22cb6ebfc046f7e95c4cb9f.ctex"]
 
 [params]
 

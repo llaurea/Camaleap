@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://c0bwbwt17bxrv"
-path="res://.godot/imported/laterais.png-9429cb8eaabcf689ca408108c7ecefa1.ctex"
+uid="uid://cxasn6gm357yl"
+path="res://.godot/imported/botao unmute.jpg-d3bafff2101d50cff62550fc952affd0.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://artwork/laterais.png"
-dest_files=["res://.godot/imported/laterais.png-9429cb8eaabcf689ca408108c7ecefa1.ctex"]
+source_file="res://artwork/botao unmute.jpg"
+dest_files=["res://.godot/imported/botao unmute.jpg-d3bafff2101d50cff62550fc952affd0.ctex"]
 
 [params]
 
