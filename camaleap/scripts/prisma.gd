@@ -8,6 +8,9 @@ var direction: int = 1
 var jumps_left: int = 2
 var on_wall: bool = false
 
+func _ready():
+	$AnimatedSprite2D.play()
+
 func _physics_process(delta):
 	velocity.y += gravity * delta
 
@@ -50,7 +53,7 @@ func _physics_process(delta):
 				direction *= -1
 				on_wall = false
 
-	$Sprite2D.flip_h = direction < 0
+	$AnimatedSprite2D.flip_h = direction < 0
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
 	if body == self:

@@ -1,15 +1,72 @@
-[gd_scene load_steps=27 format=3 uid="uid://b8y0laji325nx"]
+[gd_scene load_steps=35 format=3 uid="uid://b8y0laji325nx"]
 
-[ext_resource type="Texture2D" uid="uid://difwc4tbtcvnl" path="res://artwork/icon.svg" id="1_7bb4d"]
 [ext_resource type="Texture2D" uid="uid://dd76q8jqgoui3" path="res://artwork/fundo.png" id="1_ogo8m"]
 [ext_resource type="Script" uid="uid://dm1anoy8uljir" path="res://scripts/prisma.gd" id="1_sq8yp"]
 [ext_resource type="Script" uid="uid://lbueqw2l2vxs" path="res://scripts/camera_2d.gd" id="3_1b3iq"]
+[ext_resource type="Texture2D" uid="uid://d1578cxmf3rn5" path="res://artwork/prisma-_run-Sheet.png" id="3_gsaar"]
 [ext_resource type="Texture2D" uid="uid://d3y5fd7n4gx0a" path="res://artwork/celianna_TileA1.png" id="4_0c0ry"]
 [ext_resource type="Texture2D" uid="uid://wuwa833dl074" path="res://artwork/TileA4.png" id="5_4sjka"]
 [ext_resource type="Script" uid="uid://bqtcqdt21bh4f" path="res://scripts/pause.gd" id="6_4sjka"]
 [ext_resource type="AudioStream" uid="uid://cy17ma76opx5w" path="res://music/WhatsApp-Ptt-2025-07-01-at-21.12.12.mp3" id="8_8i8hp"]
 
 [sub_resource type="GDScript" id="GDScript_0c0ry"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_drirx"]
+atlas = ExtResource("3_gsaar")
+region = Rect2(0, 0, 360, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_qbbxf"]
+atlas = ExtResource("3_gsaar")
+region = Rect2(360, 0, 360, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_t8n7k"]
+atlas = ExtResource("3_gsaar")
+region = Rect2(720, 0, 360, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_y6f35"]
+atlas = ExtResource("3_gsaar")
+region = Rect2(1080, 0, 360, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_avosf"]
+atlas = ExtResource("3_gsaar")
+region = Rect2(1440, 0, 360, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_wa8a0"]
+atlas = ExtResource("3_gsaar")
+region = Rect2(1800, 0, 360, 385)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k3sjr"]
+atlas = ExtResource("3_gsaar")
+region = Rect2(2160, 0, 360, 385)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_iaqm3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_drirx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_qbbxf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_t8n7k")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_y6f35")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_avosf")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_wa8a0")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k3sjr")
+}],
+"loop": true,
+"name": &"run",
+"speed": 10.0
+}]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_k05ng"]
 size = Vector2(82, 82)
@@ -161,13 +218,14 @@ scale = Vector2(1, 0.823298)
 texture = ExtResource("1_ogo8m")
 
 [node name="prisma" type="CharacterBody2D" parent="."]
-position = Vector2(339.971, 402.501)
+position = Vector2(333.71, -3479.06)
 script = ExtResource("1_sq8yp")
 
-[node name="Sprite2D" type="Sprite2D" parent="prisma"]
-position = Vector2(0, 80)
-scale = Vector2(0.648438, 0.648438)
-texture = ExtResource("1_7bb4d")
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="prisma"]
+position = Vector2(0.364614, 77.7557)
+scale = Vector2(0.238309, 0.228569)
+sprite_frames = SubResource("SpriteFrames_iaqm3")
+animation = &"run"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="prisma"]
 position = Vector2(0, 80)
@@ -247,7 +305,7 @@ script = ExtResource("6_4sjka")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
 stream = ExtResource("8_8i8hp")
-volume_db = 7.536
+volume_db = -5.639
 autoplay = true
 
 [node name="Area2D2" type="Area2D" parent="."]
