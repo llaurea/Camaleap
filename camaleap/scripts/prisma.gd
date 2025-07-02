@@ -1,58 +1,55 @@
 extends CharacterBody2D
 
-#Configurações da movimentação
-@export var move_speed: float = 550.0 #Horizontal
-@export var jump_force: float = 600.0 #Pulo
-@export var gravity: float = 1100.0 #Gravidade
+@export var move_speed: float = 550.0
+@export var jump_force: float = 600.0
+@export var gravity: float = 1100.0
 
-#Estados que começa
-var direction: int = 1 #Começa para a direita
-var jumps_left: int = 2 #Tem dois pulos
-var on_wall: bool = false #Ele não começa encostado na parede
+var direction: int = 1
+var jumps_left: int = 2
+var on_wall: bool = false
 
-func _physics_process(delta): #Aplica gravidade
+func _physics_process(delta):
 	velocity.y += gravity * delta
 
-	#Se estiver encostado em uma parede e fora do chão, o personagem desliza para baixo ao invés de só trocar o lado
-	if on_wall and not is_on_floor():
-		velocity.x = 0
-		velocity.y = min(velocity.y, 300)  #Escorrega para baixo
-	else:
-		velocity.x = direction * move_speed
+	# Default horizontal movement
+	velocity.x = direction * move_speed
 
-	move_and_slide() #Pra realmente se movimentar e colidir
+	move_and_slide()
 
-	#Para ver se está no chão
+	# Reset if on floor
 	if is_on_floor():
 		jumps_left = 2
 		on_wall = false
 
-	#Para ver se está colidindo com alguma parede
+	# Check wall collisions
 	on_wall = false
 	for i in get_slide_collision_count():
 		var collision = get_slide_collision(i)
 		var normal_x = collision.get_normal().x
 		if abs(normal_x) > 0.1:
 			if is_on_floor():
-				#No chão encostando em uma parede → muda a direção
+				# On ground, touching wall → flip direction immediately
 				direction = -sign(normal_x)
 				direction *= -1
 			else:
-				# #No ar encostando na parede → desliza pela própria parede
+				# In air → wall slide
 				on_wall = true
-			jumps_left = 2 #Os pulos resetam
+				velocity.x = 0
+				velocity.y = min(velocity.y, 300) # Slide down
+			jumps_left = 2
 			break
 
-	#Para pular
+	# Jumping
 	if Input.is_action_just_pressed("ui_accept"):
 		if jumps_left > 0:
 			velocity.y = -jump_force
 			jumps_left -= 1
+
+			# Only flip direction if jumping off a wall (air)
 			if on_wall:
 				direction *= -1
 				on_wall = false
 
-	#Para flipar o sprite depois (se realmentar for fazer assim) só tirar a # que está embaixo
 	$Sprite2D.flip_h = direction < 0
 
 func _on_area_2d_body_entered(body: Node2D) -> void:
@@ -61,6 +58,8 @@ func _on_area_2d_body_entered(body: Node2D) -> void:
 
 func die():
 	print("Player died!")
-	# You can reset the scene, play animation, etc.
-	get_tree().reload_current_scene()
-	
+	get_tree().call_deferred("reload_current_scene")
+
+func _on_area_2d_2_body_entered(body: Node2D) -> void:
+	if body == self:
+		get_tree().change_scene_to_file("res://scenes/GANHOU.tscn")
