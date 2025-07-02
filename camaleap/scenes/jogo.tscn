@@ -1,11 +1,13 @@
-[gd_scene load_steps=25 format=3 uid="uid://b8y0laji325nx"]
+[gd_scene load_steps=27 format=3 uid="uid://b8y0laji325nx"]
 
 [ext_resource type="Texture2D" uid="uid://difwc4tbtcvnl" path="res://artwork/icon.svg" id="1_7bb4d"]
+[ext_resource type="Texture2D" uid="uid://dd76q8jqgoui3" path="res://artwork/fundo.png" id="1_ogo8m"]
 [ext_resource type="Script" uid="uid://dm1anoy8uljir" path="res://scripts/prisma.gd" id="1_sq8yp"]
 [ext_resource type="Script" uid="uid://lbueqw2l2vxs" path="res://scripts/camera_2d.gd" id="3_1b3iq"]
 [ext_resource type="Texture2D" uid="uid://d3y5fd7n4gx0a" path="res://artwork/celianna_TileA1.png" id="4_0c0ry"]
 [ext_resource type="Texture2D" uid="uid://wuwa833dl074" path="res://artwork/TileA4.png" id="5_4sjka"]
-[ext_resource type="Script" uid="uid://bqtcqdt21bh4f" path="res://scenes/pause.gd" id="6_4sjka"]
+[ext_resource type="Script" uid="uid://bqtcqdt21bh4f" path="res://scripts/pause.gd" id="6_4sjka"]
+[ext_resource type="AudioStream" uid="uid://cy17ma76opx5w" path="res://music/WhatsApp-Ptt-2025-07-01-at-21.12.12.mp3" id="8_8i8hp"]
 
 [sub_resource type="GDScript" id="GDScript_0c0ry"]
 
@@ -94,6 +96,86 @@ size = Vector2(319.79, 20)
 [node name="Node2D" type="Node2D"]
 scale = Vector2(1.99453, 1.96894)
 script = SubResource("GDScript_0c0ry")
+
+[node name="Fundo4" type="Sprite2D" parent="."]
+position = Vector2(342.722, 286.392)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo" type="Sprite2D" parent="."]
+position = Vector2(339.804, -1432.63)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo2" type="Sprite2D" parent="."]
+position = Vector2(343.457, -287.212)
+scale = Vector2(0.612734, 0.55805)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo2" type="Sprite2D" parent="Fundo2"]
+position = Vector2(-22.9579, -14410.7)
+scale = Vector2(1.0493, 1.21148)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo3" type="Sprite2D" parent="."]
+position = Vector2(345.138, -854.39)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo5" type="Sprite2D" parent="."]
+position = Vector2(330.53, -4875)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo6" type="Sprite2D" parent="."]
+position = Vector2(341.889, -2004.45)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo7" type="Sprite2D" parent="."]
+position = Vector2(339.626, -3723.95)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo8" type="Sprite2D" parent="."]
+position = Vector2(353.65, -4300.47)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo9" type="Sprite2D" parent="."]
+position = Vector2(322.943, -3152.91)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo10" type="Sprite2D" parent="."]
+position = Vector2(333.029, -2577.13)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo11" type="Sprite2D" parent="."]
+position = Vector2(332.318, -5449.28)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo12" type="Sprite2D" parent="."]
+position = Vector2(353.283, -6582.79)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo13" type="Sprite2D" parent="."]
+position = Vector2(335.513, -6019.57)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo14" type="Sprite2D" parent="."]
+position = Vector2(294.52, -7142.17)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
+
+[node name="Fundo15" type="Sprite2D" parent="."]
+position = Vector2(333.934, -7721.33)
+scale = Vector2(0.631754, 0.56522)
+texture = ExtResource("1_ogo8m")
 
 [node name="prisma" type="CharacterBody2D" parent="."]
 position = Vector2(341.031, 400.858)
@@ -185,6 +267,9 @@ process_mode = 3
 script = ExtResource("6_4sjka")
 
 [node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("8_8i8hp")
+volume_db = 7.536
 autoplay = true
 
 [connection signal="body_entered" from="Area2D" to="prisma" method="_on_area_2d_body_entered"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="PAUSE" method="_on_audio_stream_player_2d_finished"]

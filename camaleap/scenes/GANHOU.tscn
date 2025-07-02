@@ -1,0 +1,47 @@
+[gd_scene load_steps=3 format=3 uid="uid://po0fwc34ayxk"]
+
+[ext_resource type="Script" uid="uid://1fn18ra3rdtf" path="res://scripts/ganhou.gd" id="1_rajlt"]
+[ext_resource type="AudioStream" uid="uid://c7bvl0u5a7eoe" path="res://music/menu.mp3" id="2_ki3jy"]
+
+[node name="Control" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rajlt")
+
+[node name="Button" type="Button" parent="."]
+layout_mode = 0
+offset_left = 167.493
+offset_top = 263.05
+offset_right = 446.493
+offset_bottom = 362.05
+text = "play again"
+
+[node name="Button2" type="Button" parent="."]
+layout_mode = 0
+offset_left = 170.579
+offset_top = 388.19
+offset_right = 427.579
+offset_bottom = 506.19
+text = "menu"
+
+[node name="Button3" type="Button" parent="."]
+layout_mode = 0
+offset_left = 121.325
+offset_top = 563.679
+offset_right = 548.325
+offset_bottom = 654.679
+text = "restart"
+
+[node name="AudioStreamPlayer2D" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("2_ki3jy")
+volume_db = 1.507
+autoplay = true
+
+[connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
+[connection signal="pressed" from="Button2" to="." method="_on_button_2_pressed"]
+[connection signal="pressed" from="Button3" to="." method="_on_button_3_pressed"]
+[connection signal="finished" from="AudioStreamPlayer2D" to="." method="_on_audio_stream_player_2d_finished"]
